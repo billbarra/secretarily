@@ -26,11 +26,26 @@ The goal is not just to remind someone about tasks, but to help them maintain a 
 
 ## Quick Start
 
-1. Add the skill folder to your Claude skills environment.
-2. Open Claude Desktop and invoke `$personal-secretary`.
-3. Let the startup flow build a profile, confirm domains, and set reminder and review rhythms.
-4. Connect Notion if you want daily, weekly, and long-term memory views.
-5. Use Cowork Dispatch for proactive reminders and reviews.
+If Cowork cannot access GitHub directly, use a packaged copy of this repository instead of pulling from GitHub inside Cowork.
+
+1. Download a release zip of this project from a non-GitHub file host.
+2. Extract the archive locally.
+3. Copy `skills/personal-secretary/` into your Claude skills directory.
+4. Open Claude Desktop and invoke `$personal-secretary`.
+5. Let the startup flow build a profile, confirm domains, and set reminder and review rhythms.
+6. Connect Notion if you want daily, weekly, and long-term memory views.
+7. Use Cowork Dispatch for proactive reminders and reviews.
+
+### Manual Install
+
+The only folder you need at runtime is:
+
+```text
+skills/
+  personal-secretary/
+```
+
+If you are distributing this skill to a Cowork environment with restricted GitHub access, ship that folder inside a zip file from an accessible host.
 
 ## Product Model
 
