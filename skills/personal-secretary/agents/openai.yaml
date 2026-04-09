@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Secretary"
+  short_description: "Warm secretary for plans and reflection"
+  default_prompt: "Use $personal-secretary to help me manage plans, reminders, moods, and reviews as a warm personal secretary."
