@@ -1,17 +1,74 @@
-# Personal Secretary Skill
+# Secretarily
 
-A warm, general-purpose personal secretary skill for Claude.
+Secretarily is a Claude skill for scheduling, reflective reviews, and emotional support. It is designed to feel like a warm personal secretary rather than a cold task tracker: helping users remember what matters, receive timely prompts, reflect on their state, and adjust plans without losing context.
 
-This skill is designed to be configured in Claude Desktop, triggered proactively through Claude Cowork Dispatch, and used day to day through Claude conversations, including on mobile.
+## What It Helps With
 
-## What It Does
+- Daily scheduling and reminders
+- Weekly planning and review
+- Emotional check-ins before or after important tasks
+- Startup onboarding for new users
+- Ongoing secretary-style support that can be revised over time
 
-- Runs a full startup flow on first use
-- Builds a reusable personal profile
-- Sets greeting, reminder, and review rhythms
-- Uses local memory files as the primary continuity layer
-- Mirrors daily, weekly, and long-term memory to Notion for user viewing
-- Supports startup revision later without rebuilding everything
+## Why It Is Different
+
+Most calendar or todo systems track events. Secretarily is designed to carry context.
+
+It does that by combining:
+
+- scheduling support
+- reflective review
+- emotional support
+- local memory files for continuity
+- Notion mirroring for user-facing browsing
+
+The goal is not just to remind someone about tasks, but to help them maintain a rhythm, understand overload, and make future plans feel more realistic and humane.
+
+## Product Model
+
+Secretarily is built around a three-part usage model:
+
+1. Claude Desktop is the setup and control center
+2. Claude Cowork Dispatch is the proactive reminder channel
+3. Claude conversations, often on mobile, are the day-to-day interaction surface
+
+In practice, that means the user can configure the secretary on desktop, receive proactive outreach through Dispatch, and continue short everyday interactions wherever they are.
+
+## Core Workflow
+
+On first use, the skill runs a startup flow that:
+
+1. creates a personal profile
+2. defines or confirms the user's main life domains
+3. sets greeting, reminder, and review rhythms
+4. initializes local memory
+5. connects Notion databases for daily, weekly, and long-term memory views
+
+After startup, the secretary works in four main modes:
+
+- Reminder
+- Organizing
+- Companion
+- Review
+
+## Technical Approach
+
+The skill uses a local-first memory architecture.
+
+- Local files are the primary continuity layer
+- Conversation history is a secondary layer
+- Scheduled reminders must read memory files before producing output
+- Important interactions write back into the appropriate memory layer
+- Notion acts as a mirror for user-facing browsing rather than the primary brain
+
+The memory model is layered:
+
+- personal profile
+- long-term memory
+- weekly memory
+- daily memory
+
+This makes the skill more resilient in workflows where proactive reminders may run in separate Claude conversations.
 
 ## Default Domain Framework
 
@@ -23,12 +80,6 @@ By default, the secretary organizes commitments into four domains:
 - Personal
 
 These are only defaults. During startup, the user can keep them or define a different domain framework.
-
-## Platform Model
-
-- Setup and configuration happen in Claude Desktop
-- Proactive outreach happens through Claude Cowork Dispatch
-- Day-to-day interaction often happens through Claude conversations, including on mobile
 
 ## Repository Layout
 
@@ -43,24 +94,6 @@ skills/
       templates/
 ```
 
-This repository intentionally does not include runtime data, logs, local memory files, or private Notion configuration.
-
-## Runtime Behavior
-
-On first use, the skill should create local runtime files such as:
-
-- `data/profile/personal-profile.md`
-- `data/profile/startup-config.md`
-- `data/memory/long-term-memory.md`
-- `data/memory/weekly/YYYY-Www.md`
-- `data/memory/daily/YYYY-MM-DD.md`
-- `data/logs/interaction-log.md`
-- `data/logs/startup-log.md`
-- `data/notion/notion-config.md`
-- `data/notion/sync-status.md`
-
-These are runtime artifacts and should not be committed to a public repository.
-
 ## License
 
-This release uses the MIT License.
+MIT
