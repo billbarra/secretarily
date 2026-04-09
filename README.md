@@ -24,6 +24,14 @@ It does that by combining:
 
 The goal is not just to remind someone about tasks, but to help them maintain a rhythm, understand overload, and make future plans feel more realistic and humane.
 
+## Quick Start
+
+1. Add the skill folder to your Claude skills environment.
+2. Open Claude Desktop and invoke `$personal-secretary`.
+3. Let the startup flow build a profile, confirm domains, and set reminder and review rhythms.
+4. Connect Notion if you want daily, weekly, and long-term memory views.
+5. Use Cowork Dispatch for proactive reminders and reviews.
+
 ## Product Model
 
 Secretarily is built around a three-part usage model:
